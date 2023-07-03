@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Real-time Clock</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.min.js"></script>
+    <script>
+      const socket = io("ws://localhost:5000");
+
+      socket.on("time", (data) => {
+        document.getElementById("hour").innerText = data.hour;
+        document.getElementById("minute").innerText = data.minute;
+        document.getElementById("second").innerText = data.second;
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Real-time Clock</h1>
+    <p>
+      Time: <span id="hour">--</span>:<span id="minute">--</span>:<span id="second">--</span>
+    </p>
+  </body>
+</html>
