@@ -2,6 +2,40 @@
 <html>
   <head>
     <title>Real-time Clock</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+      }
+
+      .clock {
+        text-align: center;
+      }
+
+      .clock h1 {
+        font-size: 3em;
+        margin-bottom: 0.5em;
+      }
+
+      .clock p {
+        font-size: 2em;
+        margin-top: 0;
+      }
+
+      .clock span {
+        display: inline-block;
+        width: 2em;
+        background-color: #333;
+        color: #fff;
+        border-radius: 4px;
+        margin: 0 0.2em;
+        padding: 0.2em;
+      }
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.min.js"></script>
     <script>
       const socket = io("https://socket-clock.vercel.app/");
@@ -14,9 +48,11 @@
     </script>
   </head>
   <body>
-    <h1>Real-time Clock</h1>
-    <p>
-      Time: <span id="hour">--</span>:<span id="minute">--</span>:<span id="second">--</span>
-    </p>
+    <div class="clock">
+      <h1>Real-time Clock</h1>
+      <p>
+        Time: <span id="hour">--</span>:<span id="minute">--</span>:<span id="second">--</span>
+      </p>
+    </div>
   </body>
 </html>
